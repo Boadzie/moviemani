@@ -5,12 +5,21 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap" rel="stylesheet">
   <title>MovieMan</title>
   {% tailwind_css %}
+
+<style>
+  html, body{
+    font-family: 'Nunito Sans', sans-serif;
+  }
+</style>
 </head>
 <body class="bg-gray-200">
   <header
-      class="flex justify-between p-3 font-extrabold text-white uppercase bg-gray-700"
+      class="flex justify-between p-3 font-extrabold text-white uppercase bg-gray-800"
     >
       <div class="flex items-center justify-start space-x-4">
         <div class="hover:text-sky-600">
@@ -21,11 +30,11 @@
         </div>
       </div>
       <div class="flex items-center justify-end w-3/6 space-x-4">
-        <form class="w-full rounded-sm" action="{% url 'search_results' %}" method="GET">
+        <form class="rounded-full " action="{% url 'search_results' %}" method="GET">
           <div>
-           <input required class="text-gray-400 rounded-md" type="text" name="q" placeholder="Search Articles"
+           <input required class="text-gray-400 rounded-full" type="text" name="q" placeholder="Search Articles"
           </div>
-           <input type="submit" class="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform rounded-md bg-sky-600 hover:bg-sky-700 focus:outline-none " value="Search" />
+           <input type="submit" class="px-4 cursor-pointer py-2.5 leading-5 text-white transition-colors duration-300 transform rounded-full bg-sky-600 hover:bg-sky-700 focus:outline-none " value="Search" />
          </form>
       </div>
 
