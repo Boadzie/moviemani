@@ -5,6 +5,7 @@ from django.urls import reverse
 class Movie(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
+    image = models.ImageField(upload_to="image/%Y/%m/%d/", blank=True)
     reviews = models.ForeignKey("Review", blank=True, null=True, on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
