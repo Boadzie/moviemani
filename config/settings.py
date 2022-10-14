@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     "tailwind",
     "theme",
     "django_browser_reload",
+    "movies.apps.MoviesConfig",
 ]
 
 TAILWIND_APP_NAME = "theme"
