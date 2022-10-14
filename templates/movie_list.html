@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+<section class="">
+
+  {% block content %}
+    <div class="grid grid-cols-1 gap-4 lg:grid-cols-4 lg:mx-24">
+    {% for movie in movies %}
+      <div class="flex flex-col w-full border-4 rounded-sm border-gray-50">
+        <div class="flex-1">
+          <img class=" rounded-sm h-[15rem] w-full object-cover object-center overflow-hidden" src="{{movie.image.url}}" />
+          <h1 class="p-2 mb-1 text-lg text-gray-500 text-light">{{ movie.title }}</h1>
+          <p class="p-2 text-md">{{ movie.description }}</p>
+        </div>
+        </div>
+    {% endfor %}
+    </div>
+  {% endblock content %}
+
+</section>
