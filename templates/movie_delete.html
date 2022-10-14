@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+<section class="container px-4 py-4 mx-auto">
+  {% block content %}
+  <div class="w-3/6 p-4 m-auto mt-6 text-gray-500 bg-gray-100 rounded-sm shadow-lg">
+    <h1 class="my-2 text-3xl font-medium ">Delete Movie</h1>
+    <form action="" method="post">
+      {% csrf_token %}
+      <p>Are you sure you want to delete "{{ movie.title }}"?</p>
+      <input
+        class="px-3 py-2 mt-4 leading-5 text-white transition-colors duration-300 transform bg-red-500 rounded-md cursor-pointer hover:bg-red-400 focus:outline-none"
+        type="submit"
+        value="Confirm"
+      />
+    </form>
+  </div>
+  {% endblock content %}
+</section>

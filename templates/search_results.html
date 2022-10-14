@@ -3,8 +3,11 @@
 <section class="">
 
   {% block content %}
-    <div class="grid grid-cols-1 gap-4 lg:grid-cols-4 lg:mx-24">
-    {% for movie in movies %}
+  <h1 class="px-6 py-3 mb-4 text-3xl font-bold text-center text-gray-500 text">
+    Search Results
+  </h1>
+    <div class="grid grid-cols-1 gap-4 lg:grid-cols-4 lg:mx-24 ">
+    {% for movie in movie_list %}
       <div class="flex flex-col w-full border-4 rounded-sm border-gray-50">
         <div class="flex-1">
           {%if movie.image %}
