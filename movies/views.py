@@ -9,6 +9,7 @@ from .models import Movie
 
 class MovieListView(ListView):
     model = Movie
+    paginate_by = 8
     context_object_name = "movies"
     template_name = "movie_list.html"
 
