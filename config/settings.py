@@ -39,7 +39,9 @@ INSTALLED_APPS = [
 ]
 
 AUTH_USER_MODEL = "accounts.CustomUser"
-
+# AUTHENTICATION_BACKENDS = ["accounts.backends.EmailBackend"]
+LOGIN_REDIRECT_URL = "movie_list"
+LOGOUT_REDIRECT_URL = "movie_list"
 TAILWIND_APP_NAME = "theme"
 INTERNAL_IPS = [
     "127.0.0.1",

@@ -1,0 +1,55 @@
+{% extends "base.html" %} {% load widget_tweaks %}
+<section class="container px-4 py-4 mx-auto">
+  {% block content %}
+  <div class="w-3/6 m-auto">
+    <h1
+      class="px-6 py-3 mb-4 text-3xl font-bold text-center text-gray-500 uppercase text"
+    >
+      Sign Up
+    </h1>
+    <div class="my-2">
+      <span class="text-red-500">{{form.username.errors}}</span>
+      <span class="text-red-500">{{form.email.errors}}</span>
+      <span class="text-red-500">{{form.password1.errors}}</span>
+      <span class="text-red-500">{{form.password2.errors}}</span>
+    </div>
+    <form
+      class="grid grid-cols-2 gap-4 p-6 bg-gray-100 rounded-sm shadow-lg place-content-center"
+      action=""
+      method="post"
+    >
+      {% csrf_token %}
+
+      <div class="flex flex-col items-start justify-start">
+        <span class="">Username </span>
+
+        {{form.username|add_class:"rounded-sm w-full" }}
+      </div>
+      <div class="flex flex-col items-start justify-start">
+        <span class="">Email </span>
+
+        {{form.email|add_class:"rounded-sm w-full" }}
+      </div>
+      <div class="flex flex-col items-start justify-center">
+        <span class="">Password </span>
+
+        {{ form.password1|add_class:"rounded-sm w-full" }}
+      </div>
+      <div class="flex flex-col items-start justify-center">
+        <span class="text-start">Confirm Password </span>
+
+        {{ form.password2|add_class:" rounded-sm w-full" }}
+      </div>
+
+      <div class="inline-flex items-end justify-start">
+        <input
+          type="submit"
+          class="w-full font-bold px-2 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-sky-700 rounded-sm cursor-pointer hover:bg-sky-600 focus:outline-none"
+          value="Sign up"
+        />
+      </div>
+    </form>
+  </div>
+
+  {% endblock content %}
+</section>
