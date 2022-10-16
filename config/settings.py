@@ -35,7 +35,10 @@ INSTALLED_APPS = [
     "django_browser_reload",
     "movies.apps.MoviesConfig",
     "widget_tweaks",
+    "accounts.apps.AccountsConfig",
 ]
+
+AUTH_USER_MODEL = "accounts.CustomUser"
 
 TAILWIND_APP_NAME = "theme"
 INTERNAL_IPS = [

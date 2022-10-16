@@ -4,23 +4,21 @@
   {% block content %}
   <div class="w-3/6 m-auto">
     <h1 class="px-6 py-3 mb-4 text-3xl font-bold text-center text-gray-500 text">
-      New Movie
+      New Review
     </h1>
-    <form action="" method="post"  enctype="multipart/form-data">
+    <form action="" method="post">
       {% csrf_token %}
      <div>
-      <span class="text-lg">Title </span>
-      {{ form.title|add_class:"rounded-sm w-full" }}
+      <span class="text-lg">Text </span>
+      {{ form.text|add_class:"rounded-sm w-full" }}
      </div>
-
-     <div class="mt-4">
-      <span class="text-lg">Description </span>
-      {{ form.description|add_class:"mt-1 rounded-sm w-full" }}
+     <div>
+      <span class="text-lg">Movie </span>
+      {{ form.movie_id|add_class:"rounded-sm w-full my-2" }}
      </div>
-
-     <div class="flex flex-col items-start justify-between mt-4">
-      <span class="text-lg">Image </span>
-      {{ form.image|add_class:"file:border-0 file:bg-gray-400 file:text-white file:p-2 file:rounded-sm" }}
+     <div>
+      <span class="text-lg">Watch Again </span>
+      {{ form.watch_again|add_class:"mx-2 rounded-full" }}
      </div>
       <input type="submit" class="px-8 py-2 mt-4 font-bold leading-5 text-white transition-colors duration-300 transform rounded-md bg-sky-700 hover:bg-sky-600 focus:outline-none " value="Save" />
     </form>

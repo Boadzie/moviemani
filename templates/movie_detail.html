@@ -22,6 +22,13 @@
       >
 
       <p class="px-2 text-lg">{{ object.description }}</p>
+       <hr class="my-2"/>
+      <div  class="p-2 bg-gray-700 border-4 rounded-sm border-gray-50">
+        {%for review in object.review_set.all %}
+       <p class="px-2 text-lg italic text-gray-100 rounded-sm border-gray-50">
+        <span class="not-italic font-bold">{{review.author.username}}:</span> {{ review.text }} <br/> <span class="not-italic font-bold">Watch Again: {{review.watch_again}}</span></p>
+       {% endfor %}
+      </div>
       <div class="flex justify-start mx-4 mt-4 space-x-4 font-bold">
         {% if user.is_superuser %}
         <a

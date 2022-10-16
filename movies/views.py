@@ -4,7 +4,7 @@ from django.urls import reverse_lazy
 from django.views.generic import DetailView, ListView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 
-from .models import Movie
+from .models import Movie, Review
 
 
 class MovieListView(ListView):
@@ -45,3 +45,14 @@ class SearchResultsListView(ListView):  # new
     def get_queryset(self):  # new
         query = self.request.GET.get("q")
         return Movie.objects.filter(Q(title__icontains=query.lower()))
+
+
+class ReviewCreateView(CreateView):
+    model = Review
+    fields = ("text", "movie_id", "watch_again")
+    template_name = "review_new.html"
+    success_url = reverse_lazy("movie_list")
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
