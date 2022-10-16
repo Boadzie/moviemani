@@ -22,13 +22,15 @@
       >
 
       <p class="px-2 text-lg">{{ object.description }}</p>
-       <hr class="my-2"/>
+
+     {% if object.review_set.all.count != 0 %}
       <div  class="p-2 bg-gray-700 border-4 rounded-sm border-gray-50">
-        {%for review in object.review_set.all %}
-       <p class="px-2 text-lg italic text-gray-100 rounded-sm border-gray-50">
+        {% for review in object.review_set.all %}
+      <p class="px-2 text-lg italic text-gray-100 rounded-sm border-gray-50">
         <span class="not-italic font-bold">{{review.author.username}}:</span> {{ review.text }} <br/> <span class="not-italic font-bold">Watch Again: {{review.watch_again}}</span></p>
-       {% endfor %}
+      {% endfor %}
       </div>
+     {% endif %}
       <div class="flex justify-start mx-4 mt-4 space-x-4 font-bold">
         {% if user.is_superuser %}
         <a
@@ -42,6 +44,10 @@
           >Delete Movie</a
         >
         {% endif %}
+        <a
+          class="px-3 py-2 leading-5 text-white transition-colors duration-300 transform bg-red-400 rounded-md hover:bg-red-300 focus:outline-none"
+          href="{% url 'review_new' %}"
+          >Add Review</a>
       </div>
 
       </div>
