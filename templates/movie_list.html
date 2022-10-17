@@ -10,7 +10,7 @@
           {%if movie.image %}
             <img class=" rounded-sm h-[15rem] w-full object-cover object-center overflow-hidden" src="{{movie.image.url}}" />
           {%endif %}
-         <a href="{% url 'movie_detail' movie.pk %}"> <h1 class="p-3 mb-1 text-lg font-bold text-sky-600">{{ movie.title }}</h1></a>
+         <a href="{% url 'movie_detail' movie.pk %}"> <h1 class="p-3 mb-1 text-lg font-extrabold text-sky-600">{{ movie.title }}</h1></a>
           <p class="p-3 text-md">{{ movie.description|truncatewords:20 }}</p>
         </div>
         </div>
